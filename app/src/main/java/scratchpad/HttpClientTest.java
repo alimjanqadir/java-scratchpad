@@ -9,10 +9,10 @@ import java.net.http.HttpResponse;
 public class HttpClientTest {
     public static void main(String[] args) {
         var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://winterbe.com"))
+                .uri(URI.create("https://www.bing.com"))
                 .GET()
                 .build();
-        var client = HttpClient.newHttpClient();
+        final HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build();
         try {
             final HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
