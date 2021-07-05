@@ -11,4 +11,11 @@ public class ArrayManipulation {
                 .mapToObj(cur -> Arrays.copyOfRange(array, cur, Math.min(cur + size, array.length)))
                 .toArray(int[][]::new);
     }
+
+    public long countOccurrences(int[] numbers, int value) {
+        return Arrays
+                .stream(numbers)
+                .filter(number -> number == value)
+                .count();
+    }
 }
