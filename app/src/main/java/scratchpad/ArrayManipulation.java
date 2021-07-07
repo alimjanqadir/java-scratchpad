@@ -2,6 +2,7 @@ package scratchpad;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ArrayManipulation {
 
@@ -17,5 +18,12 @@ public class ArrayManipulation {
                 .stream(numbers)
                 .filter(number -> number == value)
                 .count();
+    }
+
+    public <T> T[] concat(T[] arrayA, T[] arrayB) {
+        return Stream.concat(
+                Stream.of(arrayA),
+                Stream.of(arrayB)
+        ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
     }
 }
