@@ -1,6 +1,8 @@
 package scratchpad;
 
 import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -25,5 +27,15 @@ public class ArrayManipulation {
                 Stream.of(arrayA),
                 Stream.of(arrayB)
         ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
+    }
+
+    /**
+     * @return An array with the elements that is not in arrayB.
+     */
+    public int[] difference(int[] arrayA, int[] arrayB) {
+        Set<Integer> set = Arrays.stream(arrayB).boxed().collect(Collectors.toSet());
+        return Arrays.stream(arrayA)
+                .filter(e -> !set.contains(e))
+                .toArray();
     }
 }
