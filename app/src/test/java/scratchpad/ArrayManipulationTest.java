@@ -38,4 +38,10 @@ public class ArrayManipulationTest {
         final int[] result = arrayManipulation.difference(arrayA, arrayB);
         Assertions.assertArrayEquals(new int[]{1, 7}, result);
     }
+
+    @Test
+    public void deepFlatTest() {
+        final int[] result = arrayManipulation.deepFlat(new Object[]{new Integer[]{1, 2, 3, 4}, 0, 1, 2, new Object[]{new Integer[]{4, 5, 6, 8}, 10, 11}});
+        Assertions.assertArrayEquals(new int[]{1, 2, 3, 4, 0, 1, 2, 4, 5, 6, 8, 10, 11}, result);
+    }
 }

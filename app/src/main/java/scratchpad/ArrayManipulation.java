@@ -38,4 +38,14 @@ public class ArrayManipulation {
                 .filter(e -> !set.contains(e))
                 .toArray();
     }
+
+    public int[] deepFlat(Object[] array) {
+        return Arrays.stream(array)
+                .flatMapToInt(o -> {
+                    if (o instanceof Object[]) {
+                        return Arrays.stream(deepFlat((Object[]) o));
+                    }
+                    return IntStream.of((Integer) o);
+                }).toArray();
+    }
 }
