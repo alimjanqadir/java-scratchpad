@@ -2,6 +2,7 @@ package scratchpad;
 
 import java.util.Arrays;
 import java.util.Set;
+import java.util.function.IntBinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -36,6 +37,15 @@ public class ArrayManipulation {
         Set<Integer> set = Arrays.stream(arrayB).boxed().collect(Collectors.toSet());
         return Arrays.stream(arrayA)
                 .filter(e -> !set.contains(e))
+                .toArray();
+    }
+
+    public int[] differenceWith(int[] arrayA, int[] arrayB, IntBinaryOperator comparator) {
+        return Arrays.stream(arrayA)
+                .filter(elementFromArrayA ->
+                        Arrays.stream(arrayB)
+                                .noneMatch(elementFromArrayB ->
+                                        comparator.applyAsInt(elementFromArrayA, elementFromArrayB) == 0))
                 .toArray();
     }
 

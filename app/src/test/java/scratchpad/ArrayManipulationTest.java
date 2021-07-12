@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.function.IntBinaryOperator;
+
 public class ArrayManipulationTest {
 
     private static ArrayManipulation arrayManipulation;
@@ -37,6 +39,13 @@ public class ArrayManipulationTest {
         final int[] arrayB = new int[]{2, 3, 4, 5, 6};
         final int[] result = arrayManipulation.difference(arrayA, arrayB);
         Assertions.assertArrayEquals(new int[]{1, 7}, result);
+    }
+
+    @Test
+    public void differenceWithTestComparatorIsTrue() {
+        final int[] result = arrayManipulation.differenceWith(new int[]{1, 2, 3, 4}, new int[]{3, 4, 5, 6}, (arrayAItem, arrayBItem) ->
+                arrayAItem == arrayBItem ? 0 : 1);
+        Assertions.assertArrayEquals(new int[]{1, 2}, result);
     }
 
     @Test
