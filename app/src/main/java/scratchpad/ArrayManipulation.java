@@ -58,4 +58,8 @@ public class ArrayManipulation {
                     return IntStream.of((Integer) o);
                 }).toArray();
     }
+
+    public int[] distinctValuesOfArray(int[] array) {
+        return Arrays.stream(array).distinct().toArray();
+    }
 }

@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.function.IntBinaryOperator;
-
 public class ArrayManipulationTest {
 
     private static ArrayManipulation arrayManipulation;
@@ -52,5 +50,12 @@ public class ArrayManipulationTest {
     public void deepFlatTest() {
         final int[] result = arrayManipulation.deepFlat(new Object[]{new Integer[]{1, 2, 3, 4}, 0, 1, 2, new Object[]{new Integer[]{4, 5, 6, 8}, 10, 11}});
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 4, 0, 1, 2, 4, 5, 6, 8, 10, 11}, result);
+    }
+
+    @Test
+    public void distinctValuesOfArrayTest() {
+        final int[] result = arrayManipulation.distinctValuesOfArray(new int[]{1, 1, 2, 3, 3, 4});
+        Assertions.assertArrayEquals(new int[]{1, 2, 3, 4}, result);
+
     }
 }
