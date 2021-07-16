@@ -58,4 +58,11 @@ public class ArrayManipulationTest {
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 4}, result);
 
     }
+
+
+    @Test
+    public void dropElementsTest() {
+        final int[] result = arrayManipulation.dropElements(new int[]{1, 1, 2, 3, 3, 4}, e -> e > 2);
+        Assertions.assertArrayEquals(new int[]{3, 3, 4}, result);
+    }
 }

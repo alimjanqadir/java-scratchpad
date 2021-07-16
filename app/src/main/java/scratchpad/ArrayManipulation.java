@@ -3,6 +3,7 @@ package scratchpad;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.function.IntBinaryOperator;
+import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -61,5 +62,12 @@ public class ArrayManipulation {
 
     public int[] distinctValuesOfArray(int[] array) {
         return Arrays.stream(array).distinct().toArray();
+    }
+
+    public int[] dropElements(int[] array, IntPredicate predicate) {
+        while(array.length > 0 && !predicate.test(array[0])) {
+            array = Arrays.copyOfRange(array, 1, array.length);
+        }
+        return array;
     }
 }
