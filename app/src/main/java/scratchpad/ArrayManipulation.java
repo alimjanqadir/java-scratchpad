@@ -65,9 +65,18 @@ public class ArrayManipulation {
     }
 
     public int[] dropElements(int[] array, IntPredicate predicate) {
-        while(array.length > 0 && !predicate.test(array[0])) {
+        while (array.length > 0 && !predicate.test(array[0])) {
             array = Arrays.copyOfRange(array, 1, array.length);
         }
         return array;
+    }
+
+    public int[] dropRight(int[] array, int dropElementCount) {
+        if (dropElementCount < 0) {
+            throw new IllegalArgumentException("drop element count can't be lower than 0");
+        }
+        return dropElementCount < array.length ?
+                Arrays.copyOfRange(array, 0, array.length - dropElementCount)
+                : new int[0];
     }
 }

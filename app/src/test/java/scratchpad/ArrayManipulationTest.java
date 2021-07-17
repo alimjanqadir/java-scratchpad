@@ -65,4 +65,11 @@ public class ArrayManipulationTest {
         final int[] result = arrayManipulation.dropElements(new int[]{1, 1, 2, 3, 3, 4}, e -> e > 2);
         Assertions.assertArrayEquals(new int[]{3, 3, 4}, result);
     }
+
+
+    @Test
+    public void dropLeftElementsTest() {
+        final int[] result = arrayManipulation.dropRight(new int[]{1, 1, 2, 3, 3, 4}, 3);
+        Assertions.assertArrayEquals(new int[]{1, 1, 2}, result);
+    }
 }
