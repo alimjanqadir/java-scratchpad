@@ -72,4 +72,11 @@ public class ArrayManipulationTest {
         final int[] result = arrayManipulation.dropRight(new int[]{1, 1, 2, 3, 3, 4}, 3);
         Assertions.assertArrayEquals(new int[]{1, 1, 2}, result);
     }
+
+
+    @Test
+    public void everyNth() {
+        final int[] result = arrayManipulation.everyNth(new int[]{1, 1, 2, 3, 3, 4}, 3);
+        Assertions.assertArrayEquals(new int[]{2, 4}, result);
+    }
 }

@@ -79,4 +79,11 @@ public class ArrayManipulation {
                 Arrays.copyOfRange(array, 0, array.length - dropElementCount)
                 : new int[0];
     }
+
+    public int[] everyNth(int[] array, int nth) {
+        return IntStream.range(0, array.length)
+                .filter(i -> i % nth == nth - 1)
+                .map(i -> array[i])
+                .toArray();
+    }
 }
