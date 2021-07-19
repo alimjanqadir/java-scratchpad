@@ -86,4 +86,11 @@ public class ArrayManipulation {
                 .map(i -> array[i])
                 .toArray();
     }
+
+    public int indexOf(int[] array, int element) {
+        return IntStream.range(0, array.length)
+                .filter(e -> array[e] == element)
+                .findFirst()
+                .orElse(-1);
+    }
 }

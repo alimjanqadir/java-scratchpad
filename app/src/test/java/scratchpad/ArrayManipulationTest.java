@@ -79,4 +79,12 @@ public class ArrayManipulationTest {
         final int[] result = arrayManipulation.everyNth(new int[]{1, 1, 2, 3, 3, 4}, 3);
         Assertions.assertArrayEquals(new int[]{2, 4}, result);
     }
+
+
+    @Test
+    public void indexOf() {
+        final int result = arrayManipulation.indexOf(new int[]{1, 1, 2, 3, 3, 4}, 3);
+        Assertions.assertEquals(3, result);
+
+    }
 }
