@@ -87,4 +87,10 @@ public class ArrayManipulationTest {
         Assertions.assertEquals(3, result);
 
     }
+
+    @Test
+    public void lastIndexOf() {
+        final int result = arrayManipulation.lastIndexOf(new int[]{1, 1, 2, 3, 3, 4}, 3);
+        Assertions.assertEquals(4, result);
+    }
 }

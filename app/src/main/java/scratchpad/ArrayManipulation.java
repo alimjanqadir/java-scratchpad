@@ -93,4 +93,12 @@ public class ArrayManipulation {
                 .findFirst()
                 .orElse(-1);
     }
+
+    public int lastIndexOf(int[] array, int element) {
+        return IntStream.iterate(array.length - 1, i -> i - 1)
+                .limit(array.length)
+                .filter(e -> element == array[e])
+                .findFirst()
+                .orElse(-1);
+    }
 }
