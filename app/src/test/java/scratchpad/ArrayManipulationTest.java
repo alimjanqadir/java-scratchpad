@@ -93,4 +93,10 @@ public class ArrayManipulationTest {
         final int result = arrayManipulation.lastIndexOf(new int[]{1, 1, 2, 3, 3, 4}, 3);
         Assertions.assertEquals(4, result);
     }
+
+    @Test
+    public void initialTest() {
+        final Integer[] result = arrayManipulation.initial(new Integer[]{1, 1, 2, 3, 3, 4});
+        Assertions.assertArrayEquals(new Integer[]{1, 1, 2, 3, 3}, result);
+    }
 }

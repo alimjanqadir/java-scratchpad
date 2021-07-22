@@ -101,4 +101,12 @@ public class ArrayManipulation {
                 .findFirst()
                 .orElse(-1);
     }
+
+    /**
+     * @param array input array
+     * @return elements without the last element.
+     */
+    public <T> T[] initial(T[] array) {
+        return Arrays.copyOfRange(array, 0, array.length - 1);
+    }
 }
