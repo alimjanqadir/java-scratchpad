@@ -109,4 +109,10 @@ public class ArrayManipulation {
     public <T> T[] initial(T[] array) {
         return Arrays.copyOfRange(array, 0, array.length - 1);
     }
+
+    public int[] filterNonUnique(int[] array) {
+        return Arrays.stream(array)
+                .filter(e -> indexOf(array, e) == lastIndexOf(array, e))
+                .toArray();
+    }
 }

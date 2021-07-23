@@ -99,4 +99,10 @@ public class ArrayManipulationTest {
         final Integer[] result = arrayManipulation.initial(new Integer[]{1, 1, 2, 3, 3, 4});
         Assertions.assertArrayEquals(new Integer[]{1, 1, 2, 3, 3}, result);
     }
+
+    @Test
+    public void filterNonUnique() {
+        final int[] result = arrayManipulation.filterNonUnique(new int[]{1, 1, 2, 3, 3, 4});
+        Assertions.assertArrayEquals(new int[]{2, 4}, result);
+    }
 }
