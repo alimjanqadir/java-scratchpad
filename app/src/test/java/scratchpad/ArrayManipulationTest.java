@@ -105,4 +105,15 @@ public class ArrayManipulationTest {
         final int[] result = arrayManipulation.filterNonUnique(new int[]{1, 1, 2, 3, 3, 4});
         Assertions.assertArrayEquals(new int[]{2, 4}, result);
     }
+
+    @Test
+    public void flattenTest() {
+        final int[] result = arrayManipulation.flatten(new Object[]{
+                new int[]{1, 2, 3},
+                0, 1, 2, 3,
+                new int[]{5, 25, 6, 36}
+        });
+        Assertions.assertArrayEquals(new int[]{1, 2, 3, 0, 1, 2, 3, 5, 25, 6, 36}, result);
+    }
+
 }

@@ -115,4 +115,12 @@ public class ArrayManipulation {
                 .filter(e -> indexOf(array, e) == lastIndexOf(array, e))
                 .toArray();
     }
+
+    public int[] flatten(Object[] array) {
+        return Arrays.stream(array)
+                .flatMapToInt(element -> element instanceof int[]
+                        ? Arrays.stream((int[]) element)
+                        : IntStream.of((Integer) element))
+                .toArray();
+    }
 }
