@@ -25,6 +25,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.0-jre")
+
+    // openjdk java object layout library
+    implementation("org.openjdk.jol:jol-core:0.10")
 }
 
 application {
