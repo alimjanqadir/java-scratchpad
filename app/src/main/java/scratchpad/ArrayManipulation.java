@@ -123,4 +123,10 @@ public class ArrayManipulation {
                         : IntStream.of((Integer) element))
                 .toArray();
     }
+
+    public int[] intArrayFlatten(int[][] array) {
+        return Arrays.stream(array)
+                .flatMapToInt(IntStream::of)
+                .toArray();
+    }
 }

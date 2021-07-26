@@ -116,4 +116,11 @@ public class ArrayManipulationTest {
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 0, 1, 2, 3, 5, 25, 6, 36}, result);
     }
 
+    @Test
+    public void intArrayFlattenTest() {
+        final int[] result = arrayManipulation.intArrayFlatten(new int[][]{
+                new int[]{1, 2, 3}, new int[]{5, 25, 6, 36}
+        });
+        Assertions.assertArrayEquals(new int[]{1, 2, 3, 5, 25, 6, 36}, result);
+    }
 }
