@@ -17,11 +17,18 @@ public class ObjectOutputStreamTest {
     }
 }
 
-class InnerClass implements Serializable{
+class InnerClass implements Serializable {
     public int publicInteger = 0;
     private int privateInteger = 0;
+    // No NotSerializableException exception
+    // public InnerClass2 innerClass2 = new InnerClass2();
+    transient public InnerClass2 innerClass2 = new InnerClass2();
 
     public void test() {
 
     }
+}
+
+class InnerClass2 {
+    public long publicLong = 0;
 }
