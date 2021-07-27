@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayManipulationTest {
 
     private static ArrayManipulation arrayManipulation;
@@ -122,5 +125,47 @@ public class ArrayManipulationTest {
                 new int[]{1, 2, 3}, new int[]{5, 25, 6, 36}
         });
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 5, 25, 6, 36}, result);
+    }
+
+    @Test
+    public void flattenDepthTestDepth2() {
+        final Object[] result = arrayManipulation.flattenDepth(new Object[]{
+                0, 1,
+                new Object[]{
+                        new Object[]{new Object[]{1, 2, 4, 8}, 1, 1, 2, 3, 5, 8},
+                        2, 3
+                },
+                new Object[]{5, 25, 6, 36},
+                37, 38
+        }, 2);
+        Assertions.assertArrayEquals(new Object[]{0, 1, new Object[]{1, 2, 4, 8}, 1, 1, 2, 3, 5, 8, 2, 3, 5, 25, 6, 36, 37, 38}, result);
+    }
+
+    @Test
+    public void flattenDepthTestDepth3() {
+        final Object[] result = arrayManipulation.flattenDepth(new Object[]{
+                0, 1,
+                new Object[]{
+                        new Object[]{new Object[]{1, 2, 4, 8}, 1, 1, 2, 3, 5, 8},
+                        2, 3
+                },
+                new Object[]{5, 25, 6, 36},
+                37, 38
+        }, 3);
+        Assertions.assertArrayEquals(new Object[]{0, 1, 1, 2, 4, 8, 1, 1, 2, 3, 5, 8, 2, 3, 5, 25, 6, 36, 37, 38}, result);
+    }
+
+    @Test
+    public void flattenDepthTestDepth4() {
+        final Object[] result = arrayManipulation.flattenDepth(new Object[]{
+                0, 1,
+                new Object[]{
+                        new Object[]{new Object[]{1, 2, 4, 8}, 1, 1, 2, 3, 5, 8},
+                        2, 3
+                },
+                new Object[]{5, 25, 6, 36},
+                37, 38
+        }, 4);
+        Assertions.assertArrayEquals(new Object[]{0, 1, 1, 2, 4, 8, 1, 1, 2, 3, 5, 8, 2, 3, 5, 25, 6, 36, 37, 38}, result);
     }
 }

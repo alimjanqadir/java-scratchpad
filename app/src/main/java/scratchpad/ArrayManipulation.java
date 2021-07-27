@@ -1,5 +1,6 @@
 package scratchpad;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.function.IntBinaryOperator;
@@ -128,5 +129,16 @@ public class ArrayManipulation {
         return Arrays.stream(array)
                 .flatMapToInt(IntStream::of)
                 .toArray();
+    }
+
+    public Object[] flattenDepth(Object[] array, int depth) {
+        if (depth == 0) {
+            return array;
+        }
+        return Arrays.stream(array)
+                .flatMap(e -> e instanceof Object[]
+                        ? Arrays.stream(flattenDepth((Object[]) e, depth - 1))
+                        : Arrays.stream(new Object[]{e})
+                ).toArray();
     }
 }
