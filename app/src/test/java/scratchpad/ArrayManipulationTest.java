@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
 
 public class ArrayManipulationTest {
 
@@ -167,5 +169,31 @@ public class ArrayManipulationTest {
                 37, 38
         }, 4);
         Assertions.assertArrayEquals(new Object[]{0, 1, 1, 2, 4, 8, 1, 1, 2, 3, 5, 8, 2, 3, 5, 25, 6, 36, 37, 38}, result);
+    }
+
+    @Test
+    public void groupBy() {
+        final Map<Integer, List<Integer>> result = arrayManipulation.groupBy(new Integer[]{1, 2, 2, 3, 3, 5}, e -> e);
+        Map<Integer, List<Integer>> map = getSampleDataForGroupBy();
+        Assertions.assertEquals(map, result);
+    }
+
+    private Map<Integer, List<Integer>> getSampleDataForGroupBy() {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        map.put(1, list1);
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(2);
+        list2.add(2);
+        map.put(2, list2);
+        List<Integer> list3 = new ArrayList<>();
+        list3.add(3);
+        list3.add(3);
+        map.put(3, list3);
+        List<Integer> list4 = new ArrayList<>();
+        list4.add(5);
+        map.put(5, list4);
+        return map;
     }
 }

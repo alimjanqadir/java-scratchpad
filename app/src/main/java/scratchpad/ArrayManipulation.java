@@ -2,7 +2,10 @@ package scratchpad;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
@@ -140,5 +143,9 @@ public class ArrayManipulation {
                         ? Arrays.stream(flattenDepth((Object[]) e, depth - 1))
                         : Arrays.stream(new Object[]{e})
                 ).toArray();
+    }
+
+    public <T, R> Map<R, List<T>> groupBy(T[] array, Function<T, R> function) {
+        return Arrays.stream(array).collect(Collectors.groupingBy(function));
     }
 }
