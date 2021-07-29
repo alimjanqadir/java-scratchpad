@@ -196,4 +196,17 @@ public class ArrayManipulationTest {
         map.put(5, list4);
         return map;
     }
+
+    @Test
+    public void initializeArrayWithRange() {
+        final int[] result = arrayManipulation.initializeArrayWithRange(0, 5);
+        Assertions.assertArrayEquals(new int[]{0, 1, 2, 3, 4, 5}, result);
+    }
+
+    @Test
+    public void initializeArrayWithValues() {
+        final int[] result = arrayManipulation.initializeArrayWithValues(5, 0);
+        Assertions.assertArrayEquals(new int[]{0, 0, 0, 0, 0}, result);
+
+    }
 }

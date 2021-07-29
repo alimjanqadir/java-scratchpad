@@ -1,6 +1,5 @@
 package scratchpad;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -147,5 +146,15 @@ public class ArrayManipulation {
 
     public <T, R> Map<R, List<T>> groupBy(T[] array, Function<T, R> function) {
         return Arrays.stream(array).collect(Collectors.groupingBy(function));
+    }
+
+    public int[] initializeArrayWithRange(int start, int end) {
+        return IntStream.rangeClosed(start, end).toArray();
+    }
+
+    public int[] initializeArrayWithValues(int size, int value) {
+        return IntStream.generate(() -> value)
+                .limit(size)
+                .toArray();
     }
 }
