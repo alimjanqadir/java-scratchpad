@@ -157,4 +157,11 @@ public class ArrayManipulation {
                 .limit(size)
                 .toArray();
     }
+
+    public int[] intersection(int[] arrayA, int[] arrayB) {
+        final Set<Integer> setFromArrayB = Arrays.stream(arrayB).boxed().collect(Collectors.toSet());
+        return Arrays.stream(arrayA)
+                .filter(setFromArrayB::contains)
+                .toArray();
+    }
 }

@@ -209,4 +209,10 @@ public class ArrayManipulationTest {
         Assertions.assertArrayEquals(new int[]{0, 0, 0, 0, 0}, result);
 
     }
+
+    @Test
+    public void intersection() {
+        final int[] result = arrayManipulation.intersection(new int[]{1, 2, 3, 4}, new int[]{3, 4, 5, 6});
+        Assertions.assertArrayEquals(new int[]{3, 4}, result);
+    }
 }
