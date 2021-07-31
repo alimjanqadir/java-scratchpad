@@ -164,4 +164,13 @@ public class ArrayManipulation {
                 .filter(setFromArrayB::contains)
                 .toArray();
     }
+
+    public <T> int nthElement(T[] array, int n) {
+        if (Math.abs(n) > array.length) return -1;
+
+        if (n > 0) {
+            return (int) Arrays.copyOfRange(array, n, array.length)[0];
+        }
+        return (int) Arrays.copyOfRange(array, array.length + n, array.length)[0];
+    }
 }

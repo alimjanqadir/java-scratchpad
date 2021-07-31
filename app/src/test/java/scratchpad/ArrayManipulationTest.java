@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.function.Function;
-import java.util.function.IntBinaryOperator;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ArrayManipulationTest {
 
@@ -207,12 +207,36 @@ public class ArrayManipulationTest {
     public void initializeArrayWithValues() {
         final int[] result = arrayManipulation.initializeArrayWithValues(5, 0);
         Assertions.assertArrayEquals(new int[]{0, 0, 0, 0, 0}, result);
-
     }
 
     @Test
     public void intersection() {
         final int[] result = arrayManipulation.intersection(new int[]{1, 2, 3, 4}, new int[]{3, 4, 5, 6});
         Assertions.assertArrayEquals(new int[]{3, 4}, result);
+    }
+
+
+    @Test
+    public void nthElement() {
+        final int result = arrayManipulation.nthElement(new Integer[]{1, 2, 3, 4}, 2);
+        Assertions.assertEquals(3, result);
+    }
+
+    @Test
+    public void nthElementOutOfBounce() {
+        final int result = arrayManipulation.nthElement(new Integer[]{1, 2, 3, 4}, 10);
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void nthElementNegativeIndex() {
+        final int result = arrayManipulation.nthElement(new Integer[]{1, 2, 3, 4}, -1);
+        Assertions.assertEquals(4, result);
+    }
+
+    @Test
+    public void nthElementNegativeOutOfBounce() {
+        final int result = arrayManipulation.nthElement(new Integer[]{1, 2, 3, 4}, -10);
+        Assertions.assertEquals(-1, result);
     }
 }
