@@ -239,4 +239,22 @@ public class ArrayManipulationTest {
         final int result = arrayManipulation.nthElement(new Integer[]{1, 2, 3, 4}, -10);
         Assertions.assertEquals(-1, result);
     }
+
+    @Test
+    public void join() {
+        final String result = arrayManipulation.join(new Integer[]{1, 2, 3, 4}, "", "");
+        Assertions.assertEquals("1234", result);
+    }
+
+    @Test
+    public void joinWithSeparator() {
+        final String result = arrayManipulation.join(new Integer[]{1, 2, 3, 4}, "-", "");
+        Assertions.assertEquals("1-2-3-4", result);
+    }
+
+    @Test
+    public void joinWithSeparatorAndEnd() {
+        final String result = arrayManipulation.join(new Integer[]{1, 2, 3, 4}, "-", ":");
+        Assertions.assertEquals("1-2-3-4:", result);
+    }
 }

@@ -1,9 +1,6 @@
 package scratchpad;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntPredicate;
@@ -172,5 +169,14 @@ public class ArrayManipulation {
             return (int) Arrays.copyOfRange(array, n, array.length)[0];
         }
         return (int) Arrays.copyOfRange(array, array.length + n, array.length)[0];
+    }
+
+    public <T> String join(T[] array, String separator, String end) {
+        return IntStream.range(0, array.length)
+                .mapToObj((i) -> new AbstractMap.SimpleEntry<>(i, array[i]))
+                .reduce("", (acc, val) -> val.getKey() == array.length - 1
+                                ? acc + val.getValue() + end
+                                : acc + val.getValue() + separator,
+                        (a, b) -> a);
     }
 }
