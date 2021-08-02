@@ -179,4 +179,14 @@ public class ArrayManipulation {
                                 : acc + val.getValue() + separator,
                         (a, b) -> a);
     }
+
+    public <T extends Comparable<T>> int isSorted(T[] array) {
+        final int direction = array[0].compareTo(array[1]) < 0 ? 1 : -1;
+        for (int i = 0; i < array.length; i++) {
+            if (i == array.length - 1) {
+                return direction;
+            } else if (array[i].compareTo(array[i + 1]) * direction > 0) return 0;
+        }
+        return direction;
+    }
 }

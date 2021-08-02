@@ -257,4 +257,22 @@ public class ArrayManipulationTest {
         final String result = arrayManipulation.join(new Integer[]{1, 2, 3, 4}, "-", ":");
         Assertions.assertEquals("1-2-3-4:", result);
     }
+
+    @Test
+    public void isSorted() {
+        final int result = arrayManipulation.isSorted(new Integer[]{1, 2, 3, 4});
+        Assertions.assertEquals(1, result);
+    }
+
+    @Test
+    public void isSortedDescending() {
+        final int result = arrayManipulation.isSorted(new Integer[]{3, 2, 1, 0, -1});
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    public void isSortedNotSorted() {
+        final int result = arrayManipulation.isSorted(new Integer[]{1, 0, 3, 4});
+        Assertions.assertEquals(0, result);
+    }
 }
