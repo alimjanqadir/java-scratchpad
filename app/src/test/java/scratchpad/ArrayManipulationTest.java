@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ArrayManipulationTest {
 
@@ -275,4 +272,38 @@ public class ArrayManipulationTest {
         final int result = arrayManipulation.isSorted(new Integer[]{1, 0, 3, 4});
         Assertions.assertEquals(0, result);
     }
+
+    @Test
+    public void pick() {
+        final Map<Integer, Integer[]> result = arrayManipulation.pick(getSampleDataForPick(), new Integer[]{2, 3, 4});
+        Assertions.assertTrue(areEqualWithArrayValue(getExpectedDataForPick(), result));
+    }
+
+    public boolean areEqualWithArrayValue(Map<Integer, Integer[]> first, Map<Integer, Integer[]> second) {
+        if (first.size() != second.size()) {
+            return false;
+        }
+
+        return first.entrySet().stream()
+                .allMatch(e -> Arrays.equals(e.getValue(), second.get(e.getKey())));
+    }
+
+    private Map<Integer, Integer[]> getExpectedDataForPick() {
+        Map<Integer, Integer[]> map = new HashMap<>();
+        map.put(2, new Integer[]{2, 3, 4, 5});
+        map.put(3, new Integer[]{3, 4, 5, 6});
+        map.put(4, new Integer[]{4, 5, 6, 7});
+        return map;
+    }
+
+    private Map<Integer, Integer[]> getSampleDataForPick() {
+        Map<Integer, Integer[]> map = new HashMap<>();
+        map.put(1, new Integer[]{1, 2, 3, 4});
+        map.put(2, new Integer[]{2, 3, 4, 5});
+        map.put(3, new Integer[]{3, 4, 5, 6});
+        map.put(4, new Integer[]{4, 5, 6, 7});
+        map.put(5, new Integer[]{5, 6, 7, 8});
+        return map;
+    }
+
 }

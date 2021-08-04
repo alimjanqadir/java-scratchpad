@@ -189,4 +189,10 @@ public class ArrayManipulation {
         }
         return direction;
     }
+
+    public <T, R> Map<T, R[]> pick(Map<T, R[]> object, T[] array) {
+        return Arrays.stream(array)
+                .filter(object::containsKey)
+                .collect(Collectors.toMap(k -> k, object::get));
+    }
 }
