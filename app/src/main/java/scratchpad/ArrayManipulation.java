@@ -195,4 +195,8 @@ public class ArrayManipulation {
                 .filter(object::containsKey)
                 .collect(Collectors.toMap(k -> k, object::get));
     }
+
+    public <T> T sample(T[] array) {
+        return array[(int) Math.floor(Math.random() * array.length)];
+    }
 }

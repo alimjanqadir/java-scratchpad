@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArrayManipulationTest {
 
@@ -304,6 +305,13 @@ public class ArrayManipulationTest {
         map.put(4, new Integer[]{4, 5, 6, 7});
         map.put(5, new Integer[]{5, 6, 7, 8});
         return map;
+    }
+
+    @Test
+    public void sample() {
+        final Integer[] array = {1, 2, 3, 4, 5};
+        final int result = arrayManipulation.sample(array);
+        Assertions.assertTrue(Arrays.stream(array).collect(Collectors.toSet()).contains(result));
     }
 
 }
