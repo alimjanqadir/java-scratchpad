@@ -314,4 +314,22 @@ public class ArrayManipulationTest {
         Assertions.assertTrue(Arrays.stream(array).collect(Collectors.toSet()).contains(result));
     }
 
+    @Test
+    public void tail() {
+        final Integer[] result = arrayManipulation.tail(new Integer[]{1, 2, 4, 5});
+        Assertions.assertArrayEquals(new Integer[]{2, 4, 5}, result);
+    }
+
+
+    @Test
+    public void tailTestArrayEmpty() {
+        final Integer[] result = arrayManipulation.tail(new Integer[]{});
+        Assertions.assertArrayEquals(new Integer[]{}, result);
+    }
+
+    @Test
+    public void tailTestArrayWithOneElement() {
+        final Integer[] result = arrayManipulation.tail(new Integer[]{2});
+        Assertions.assertArrayEquals(new Integer[]{2}, result);
+    }
 }

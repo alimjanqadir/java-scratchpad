@@ -199,4 +199,10 @@ public class ArrayManipulation {
     public <T> T sample(T[] array) {
         return array[(int) Math.floor(Math.random() * array.length)];
     }
+
+    public <T> T[] tail(T[] array) {
+        return array.length > 1
+                ? Arrays.copyOfRange(array, 1, array.length)
+                : array;
+    }
 }
