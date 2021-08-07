@@ -205,4 +205,8 @@ public class ArrayManipulation {
                 ? Arrays.copyOfRange(array, 1, array.length)
                 : array;
     }
+
+    public <T> T[] take(T[] array, int n) {
+        return Arrays.copyOfRange(array, 0, n);
+    }
 }
