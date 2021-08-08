@@ -338,4 +338,10 @@ public class ArrayManipulationTest {
         final Integer[] result = arrayManipulation.take(new Integer[]{1, 2, 3, 4, 5}, 2);
         Assertions.assertArrayEquals(new Integer[]{1, 2}, result);
     }
+
+    @Test
+    public void takeRight() {
+        final Integer[] result = arrayManipulation.takeRight(new Integer[]{1, 2, 3, 4, 5}, 2);
+        Assertions.assertArrayEquals(new Integer[]{4, 5}, result);
+    }
 }
