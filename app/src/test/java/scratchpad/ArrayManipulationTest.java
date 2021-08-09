@@ -344,4 +344,11 @@ public class ArrayManipulationTest {
         final Integer[] result = arrayManipulation.takeRight(new Integer[]{1, 2, 3, 4, 5}, 2);
         Assertions.assertArrayEquals(new Integer[]{4, 5}, result);
     }
+
+    @Test
+    public void union() {
+        final Integer[] result = arrayManipulation.union(new Integer[]{1, 2, 3, 4}, new Integer[]{3, 4, 5, 6});
+        Assertions.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5, 6}, result);
+    }
+
 }

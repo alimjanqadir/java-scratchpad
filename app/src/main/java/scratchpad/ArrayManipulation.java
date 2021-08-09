@@ -213,4 +213,10 @@ public class ArrayManipulation {
     public <T> T[] takeRight(T[] array, int n) {
         return Arrays.copyOfRange(array, array.length - n, array.length);
     }
+
+    public <T> T[] union(T[] arrayA, T[] arrayB) {
+        Set<T> set = new HashSet<>(Arrays.asList(arrayA));
+        set.addAll(Arrays.asList(arrayB));
+        return set.toArray((T[]) Arrays.copyOf(new Object[0], 0, arrayA.getClass()));
+    }
 }
