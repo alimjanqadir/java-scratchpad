@@ -219,4 +219,10 @@ public class ArrayManipulation {
         set.addAll(Arrays.asList(arrayB));
         return set.toArray((T[]) Arrays.copyOf(new Object[0], 0, arrayA.getClass()));
     }
+
+    public <T> T[] similarity(T[] arrayA, T[] arrayB) {
+        return Arrays.stream(arrayA).
+                filter(elementFromArrayA -> Arrays.asList(arrayB).contains(elementFromArrayA))
+                .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
+    }
 }

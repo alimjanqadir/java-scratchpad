@@ -351,4 +351,9 @@ public class ArrayManipulationTest {
         Assertions.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5, 6}, result);
     }
 
+    @Test
+    public void similarity() {
+        final Integer[] result = arrayManipulation.similarity(new Integer[]{1, 2, 3, 4}, new Integer[]{3, 4, 5, 6});
+        Assertions.assertArrayEquals(new Integer[]{3, 4}, result);
+    }
 }
