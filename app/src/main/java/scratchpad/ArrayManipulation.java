@@ -225,4 +225,10 @@ public class ArrayManipulation {
                 filter(elementFromArrayA -> Arrays.asList(arrayB).contains(elementFromArrayA))
                 .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
     }
+
+    public <T> T[] without(T[] array, T... excludedElements) {
+        return Arrays.stream(array).
+                filter(e -> !Arrays.asList(excludedElements).contains(e))
+                .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, array.getClass()));
+    }
 }

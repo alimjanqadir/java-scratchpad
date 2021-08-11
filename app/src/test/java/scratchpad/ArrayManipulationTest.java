@@ -356,4 +356,16 @@ public class ArrayManipulationTest {
         final Integer[] result = arrayManipulation.similarity(new Integer[]{1, 2, 3, 4}, new Integer[]{3, 4, 5, 6});
         Assertions.assertArrayEquals(new Integer[]{3, 4}, result);
     }
+
+    @Test
+    public void without() {
+        final Integer[] result = arrayManipulation.without(new Integer[]{1, 2, 3, 4, 5}, 1, 2, 3);
+        Assertions.assertArrayEquals(new Integer[]{4, 5}, result);
+    }
+
+    @Test
+    public void withoutEmptyExclusions() {
+        final Integer[] result = arrayManipulation.without(new Integer[]{1, 2, 3, 4, 5});
+        Assertions.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, result);
+    }
 }
