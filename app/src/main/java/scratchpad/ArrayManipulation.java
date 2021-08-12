@@ -231,4 +231,13 @@ public class ArrayManipulation {
                 filter(e -> !Arrays.asList(excludedElements).contains(e))
                 .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, array.getClass()));
     }
+
+    public <T> T[] symmetricDifference(T[] arrayA, T[] arrayB) {
+        Set<T> a = new HashSet<>(Arrays.asList(arrayA));
+        Set<T> b = new HashSet<>(Arrays.asList(arrayB));
+        return Stream.concat(
+                Arrays.stream(arrayA).filter(e -> !b.contains(e)),
+                Arrays.stream(arrayB).filter(e -> !a.contains(e))
+        ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
+    }
 }
