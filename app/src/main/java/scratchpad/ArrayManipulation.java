@@ -1,9 +1,7 @@
 package scratchpad;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.IntBinaryOperator;
-import java.util.function.IntPredicate;
+import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -239,5 +237,13 @@ public class ArrayManipulation {
                 Arrays.stream(arrayA).filter(e -> !b.contains(e)),
                 Arrays.stream(arrayB).filter(e -> !a.contains(e))
         ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arrayA.getClass()));
+    }
+
+    public Map<String, Object>[] reducedFilter(Map<String, Object>[] data, String[] keys, Predicate<Map<String, Object>> predicate) {
+        return Arrays.stream(data)
+                .filter(predicate)
+                .map(item -> Arrays.stream(keys).filter(item::containsKey)
+                        .collect(Collectors.toMap(Function.identity(), item::get))
+                ).toArray((IntFunction<Map<String, Object>[]>) Map[]::new);
     }
 }

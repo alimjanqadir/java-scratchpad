@@ -380,4 +380,16 @@ public class ArrayManipulationTest {
         final Integer[] result = arrayManipulation.symmetricDifference(new Integer[]{}, new Integer[]{});
         Assertions.assertArrayEquals(new Integer[]{}, result);
     }
+
+    @Test
+    public void reducedFilter() {
+        Map<String, Object> mapA = Map.of("id", 1, "name", "A", "age", 29);
+        Map<String, Object> mapB = Map.of("id", 2, "name", "B", "age", 30);
+        Map<String, Object> mapC = Map.of("id", 3, "name", "C", "age", 50);
+
+        final Map<String, Object>[] result = arrayManipulation.reducedFilter(new Map[]{mapA, mapB, mapC},
+                new String[]{"name", "age"}, (item) -> (Integer) item.get("age") < 50);
+        Assertions.assertArrayEquals(new Map[]{Map.of("name", "A", "age", 29), Map.of("name", "B", "age", 30)}, result);
+    }
+
 }
