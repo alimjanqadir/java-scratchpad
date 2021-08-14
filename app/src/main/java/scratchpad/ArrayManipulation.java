@@ -246,4 +246,12 @@ public class ArrayManipulation {
                         .collect(Collectors.toMap(Function.identity(), item::get))
                 ).toArray((IntFunction<Map<String, Object>[]>) Map[]::new);
     }
+
+    public <T extends Comparable<T>> int sortedIndex(T[] array, T element) {
+        boolean descending = array[0].compareTo(array[array.length - 1]) > 0;
+        return IntStream.range(0, array.length)
+                .filter(i -> descending ? element.compareTo(array[i]) >= 0 : element.compareTo(array[i]) <= 0)
+                .findFirst()
+                .orElse(array.length);
+    }
 }

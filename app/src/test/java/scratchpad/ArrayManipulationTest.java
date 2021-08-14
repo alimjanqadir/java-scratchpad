@@ -392,4 +392,17 @@ public class ArrayManipulationTest {
         Assertions.assertArrayEquals(new Map[]{Map.of("name", "A", "age", 29), Map.of("name", "B", "age", 30)}, result);
     }
 
+    @Test
+    public void sortedIndex() {
+        final int result = arrayManipulation.sortedIndex(new Integer[]{1, 2, 3, 4}, 3);
+        Assertions.assertEquals(2, result);
+    }
+
+
+    @Test
+    public void sortedIndexAscending() {
+        final int result = arrayManipulation.sortedIndex(new Integer[]{4, 3, 2, 1}, 3);
+        Assertions.assertEquals(1, result);
+    }
+
 }
