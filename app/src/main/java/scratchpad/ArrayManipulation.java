@@ -254,4 +254,17 @@ public class ArrayManipulation {
                 .findFirst()
                 .orElse(array.length);
     }
+
+    public <T> T[] sampleSize(T[] array, int n) {
+        var copiedArray = Arrays.copyOf(array, array.length);
+        var length = array.length;
+        var m = length;
+        while (m > 0) {
+            var i = (int) Math.floor(Math.random() * m--);
+            var temp = copiedArray[i];
+            copiedArray[i] = copiedArray[m];
+            copiedArray[m] = temp;
+        }
+        return Arrays.copyOf(copiedArray, Math.min(n, length));
+    }
 }

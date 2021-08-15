@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class ArrayManipulationTest {
 
     private static ArrayManipulation arrayManipulation;
@@ -405,4 +408,29 @@ public class ArrayManipulationTest {
         Assertions.assertEquals(1, result);
     }
 
+    @Test
+    public void sampleSize() {
+        var input = new Integer[]{1, 2, 3, 4};
+        var result = arrayManipulation.sampleSize(input, 2);
+        assertThat(List.of(result), hasSize(equalTo(2)));
+        assertThat(List.of(input), hasItems(result));
+    }
+
+
+    @Test
+    public void sampleSizeZero() {
+        var input = new Integer[]{1, 2, 3, 4};
+        var result = arrayManipulation.sampleSize(input, 0);
+        assertThat(List.of(result), hasSize(equalTo(0)));
+        assertThat(List.of(input), hasItems(result));
+    }
+
+
+    @Test
+    public void sampleSizeGreaterThanInputLength() {
+        var input = new Integer[]{1, 2, 3, 4};
+        var result = arrayManipulation.sampleSize(input, 5);
+        assertThat(List.of(result), hasSize(equalTo(input.length)));
+        assertThat(List.of(input), hasItems(result));
+    }
 }
