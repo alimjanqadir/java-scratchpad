@@ -433,4 +433,13 @@ public class ArrayManipulationTest {
         assertThat(List.of(result), hasSize(equalTo(input.length)));
         assertThat(List.of(input), hasItems(result));
     }
+
+    @Test
+    public void shuffle() {
+        var input = new Integer[]{1, 2, 3, 4};
+        var result = arrayManipulation.shuffle(input);
+        assertThat(List.of(result), hasSize(input.length));
+        assertThat(List.of(result), containsInAnyOrder(input));
+    }
+
 }

@@ -267,4 +267,16 @@ public class ArrayManipulation {
         }
         return Arrays.copyOf(copiedArray, Math.min(n, length));
     }
+
+    public <T> T[] shuffle(T[] array) {
+        var copiedArray = Arrays.copyOf(array, array.length);
+        var m = copiedArray.length;
+        while (m > 0) {
+            var i = (int) Math.floor(Math.random() * m--);
+            var temp = copiedArray[i];
+            copiedArray[i] = copiedArray[m];
+            copiedArray[m] = temp;
+        }
+        return copiedArray;
+    }
 }
