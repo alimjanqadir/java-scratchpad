@@ -279,4 +279,14 @@ public class ArrayManipulation {
         }
         return copiedArray;
     }
+
+    public List<Object[]> zip(Object[]... array) {
+        var max = Arrays.stream(array).mapToInt(nestedArray -> nestedArray.length).max();
+        return IntStream.range(0, max.orElseThrow())
+                .mapToObj(
+                        i -> Arrays.stream(array)
+                                .map(nestedArray -> nestedArray[i])
+                                .toArray()
+                ).collect(Collectors.toList());
+    }
 }

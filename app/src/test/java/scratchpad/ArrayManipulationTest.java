@@ -442,4 +442,11 @@ public class ArrayManipulationTest {
         assertThat(List.of(result), containsInAnyOrder(input));
     }
 
+    @Test
+    public void zip() {
+        var result = arrayManipulation.zip(new Integer[]{1, 2, 3, 4}, new Integer[]{5, 6, 7, 8}, new Integer[]{10, 11, 12, 13});
+        assertThat(result, hasSize(4));
+        assertThat(result, hasItems(new Integer[]{1, 5, 10}, new Integer[]{2, 6, 11}, new Integer[]{3, 7, 12}, new Integer[]{4, 8, 13}));
+    }
+
 }
