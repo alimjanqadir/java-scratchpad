@@ -1,6 +1,7 @@
 package scratchpad;
 
 import java.util.*;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -285,8 +286,14 @@ public class ArrayManipulation {
         return IntStream.range(0, max.orElseThrow())
                 .mapToObj(
                         i -> Arrays.stream(array)
-                                .map(nestedArray -> nestedArray[i])
+                                .map(nestedArray -> i < nestedArray.length ? nestedArray[i] : null)
                                 .toArray()
                 ).collect(Collectors.toList());
+    }
+
+    public Map<String, Object> zipObject(String[] properties, Object[] values) {
+        return IntStream.range(0, properties.length)
+                .mapToObj(i -> new SimpleEntry<>(properties[i], values[i]))
+                .collect(HashMap::new, (map, entry) -> map.put(entry.getKey(), entry.getValue()), HashMap::putAll);
     }
 }

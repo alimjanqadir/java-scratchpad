@@ -446,7 +446,29 @@ public class ArrayManipulationTest {
     public void zip() {
         var result = arrayManipulation.zip(new Integer[]{1, 2, 3, 4}, new Integer[]{5, 6, 7, 8}, new Integer[]{10, 11, 12, 13});
         assertThat(result, hasSize(4));
-        assertThat(result, hasItems(new Integer[]{1, 5, 10}, new Integer[]{2, 6, 11}, new Integer[]{3, 7, 12}, new Integer[]{4, 8, 13}));
+        assertThat(result, contains(new Integer[]{1, 5, 10}, new Integer[]{2, 6, 11}, new Integer[]{3, 7, 12}, new Integer[]{4, 8, 13}));
+    }
+
+    @Test
+    public void zipWithUnevenElements() {
+        var result = arrayManipulation.zip(new Integer[]{1, 2, 3, 4}, new Integer[]{5, 6, 7, 8, 9}, new Integer[]{10, 11, 12, 13, 15});
+        assertThat(result, hasSize(5));
+        assertThat(result, contains(new Integer[]{1, 5, 10}, new Integer[]{2, 6, 11}, new Integer[]{3, 7, 12}, new Integer[]{4, 8, 13}, new Object[]{null, 9, 15}));
+    }
+
+    @Test
+    public void zipObject() {
+        var doubles = new double[]{1.0, 2.0, 3.0};
+        var integers = new int[]{2, 4, 8, 16, 32};
+        var characters = new char[]{'x', 'y', 'z'};
+
+        var values = new Object[]{doubles, integers, characters};
+        var properties = new String[]{"doubles", "integers", "characters"};
+
+        var result = arrayManipulation.zipObject(properties, values);
+
+        assertThat(result.size(), is(3));
+        assertThat(result, is(Map.of("doubles", doubles, "integers", integers, "characters", characters)));
     }
 
 }
