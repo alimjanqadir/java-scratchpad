@@ -24,4 +24,11 @@ public class MathOperationsTest {
 		
 		Assertions.assertTrue("Array is empty".contains(exception.getMessage()));
 	}
+	
+	@Test
+	public void gcd() {
+		var result = mathOperations.gcd(new int[]{10, 100});
+		Assertions.assertEquals(10, result.getAsInt());
+	}
 }
+
