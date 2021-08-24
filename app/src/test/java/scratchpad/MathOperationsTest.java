@@ -30,5 +30,11 @@ public class MathOperationsTest {
 		var result = mathOperations.gcd(new int[]{10, 100});
 		Assertions.assertEquals(10, result.getAsInt());
 	}
+	
+	@Test
+	public void lcm() {
+		var result = mathOperations.lcm(new int[]{4, 8});
+		Assertions.assertEquals(8, result.getAsInt());
+	}
 }
 

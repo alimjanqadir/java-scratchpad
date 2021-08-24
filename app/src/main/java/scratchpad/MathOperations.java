@@ -22,6 +22,11 @@ public class MathOperations {
 		}
 		return gcd(b, a % b);
 	}
+
+	public OptionalInt lcm(int[] array) {
+		return Arrays.stream(array)
+			.reduce((a, b) -> (a * b) / gcd(a, b));
+	}
 }
 
 
