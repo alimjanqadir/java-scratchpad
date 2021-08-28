@@ -36,5 +36,18 @@ public class MathOperationsTest {
 		var result = mathOperations.lcm(new int[]{4, 8});
 		Assertions.assertEquals(8, result.getAsInt());
 	}
+
+	@Test
+	public void isEven() {
+		var result = mathOperations.isEven(2);
+		Assertions.assertEquals(true, result);
+		
+	}
+
+	@Test
+	public void getNextPositiveBinaryStructure() {
+		var result = mathOperations.getNextPositiveBinaryStructure(50);
+		Assertions.assertEquals(Integer.toBinaryString(64), result);
+	}
 }
 

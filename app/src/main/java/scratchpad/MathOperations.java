@@ -27,6 +27,15 @@ public class MathOperations {
 		return Arrays.stream(array)
 			.reduce((a, b) -> (a * b) / gcd(a, b));
 	}
+
+	public boolean isEven(int value) {
+		return (value & 0b1) == 0;
+	}
+
+	public String  getNextPositiveBinaryStructure(int n) {
+		var integerResult = 1 << (32 - Integer.numberOfLeadingZeros(n - 1));
+		return Integer.toBinaryString(integerResult);
+	}
 }
 
 
