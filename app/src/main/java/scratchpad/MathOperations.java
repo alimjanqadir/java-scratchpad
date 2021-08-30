@@ -3,6 +3,7 @@ package scratchpad;
 import java.util.stream.IntStream;
 import java.util.OptionalInt;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MathOperations {
 	public double average(int[] array) {
@@ -35,6 +36,10 @@ public class MathOperations {
 	public String  getNextPositiveBinaryStructure(int n) {
 		var integerResult = 1 << (32 - Integer.numberOfLeadingZeros(n - 1));
 		return Integer.toBinaryString(integerResult);
+	}
+
+	public int generateRandomInteger() {
+		return ThreadLocalRandom.current().nextInt(); 
 	}
 }
 
