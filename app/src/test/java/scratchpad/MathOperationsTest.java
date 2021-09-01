@@ -49,5 +49,12 @@ public class MathOperationsTest {
 		var result = mathOperations.getNextPositiveBinaryStructure(50);
 		Assertions.assertEquals(Integer.toBinaryString(64), result);
 	}
+
+	@Test
+	public void isPowerOfTwo() {
+		var result = mathOperations.isPowerOfTwo(16);
+		Assertions.assertEquals(true, result);
+	}
 }
+
 

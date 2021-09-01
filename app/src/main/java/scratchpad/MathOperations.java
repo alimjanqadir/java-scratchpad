@@ -41,6 +41,10 @@ public class MathOperations {
 	public int generateRandomInteger() {
 		return ThreadLocalRandom.current().nextInt(); 
 	}
+
+	public boolean isPowerOfTwo(int value) {
+		return value > 0 && (value & (~value + 1)) == value;
+	}
 }
 
 
