@@ -4,6 +4,7 @@ public final class ArbitraryCodes {
 	public static void main(String[] args) {
 		einstienFloorProblem();	
 		isMultipleOfThreeAndFive_and_greaterThanTen();
+		calculateInterest();
 	}	
 
 	static void einstienFloorProblem() {
@@ -26,5 +27,17 @@ public final class ArbitraryCodes {
 				System.out.println("Smaller than 10");
 			}
 		}	
+	}
+
+	static void calculateInterest() {
+		double ratio = 0.1, initialDeposit = 100, balance = initialDeposit;
+		int years = 0;
+		var multiple = 2;
+
+		while(balance / initialDeposit < multiple) {
+			years += 1;
+			balance = balance * (1 + ratio);
+		}
+		System.out.println(String.format("Takes %d years.", years));
 	}
 }
