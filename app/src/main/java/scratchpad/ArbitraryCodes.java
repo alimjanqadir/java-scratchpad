@@ -5,6 +5,7 @@ public final class ArbitraryCodes {
 		einstienFloorProblem();	
 		isMultipleOfThreeAndFive_and_greaterThanTen();
 		calculateInterest();
+		fibonacciSeries();
 	}	
 
 	static void einstienFloorProblem() {
@@ -39,5 +40,16 @@ public final class ArbitraryCodes {
 			balance = balance * (1 + ratio);
 		}
 		System.out.println(String.format("Takes %d years.", years));
+	}
+
+	static void fibonacciSeries() {
+		int a=1, b=1, c=0;
+		while(c < 100) {
+			System.out.println(a);
+			System.out.println(b);
+			c = a + b;
+			b = b + c;
+			a = c;
+		}
 	}
 }
