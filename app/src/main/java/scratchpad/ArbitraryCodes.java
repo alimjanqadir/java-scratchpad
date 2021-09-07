@@ -1,11 +1,14 @@
 package scratchpad;
 
 public final class ArbitraryCodes {
+	public static int classScope = 45;
+
 	public static void main(String[] args) {
 		einstienFloorProblem();	
 		isMultipleOfThreeAndFive_and_greaterThanTen();
 		calculateInterest();
 		fibonacciSeries();
+		classScopeTest();
 	}	
 
 	static void einstienFloorProblem() {
@@ -51,5 +54,15 @@ public final class ArbitraryCodes {
 			b = b + c;
 			a = c;
 		}
+	}
+
+	static void classScopeTest() {
+		double classScope = 2.0f;
+		System.out.println(classScope);
+		{
+			double pi = 3.14159265;	
+			System.out.println(pi);
+		}
+
 	}
 }
