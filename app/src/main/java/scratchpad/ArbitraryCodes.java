@@ -1,14 +1,20 @@
 package scratchpad;
 
+import java.util.Map;
+
 public final class ArbitraryCodes {
 	public static int classScope = 45;
-
+	public Map<Integer, String> map = Map.of(1, "a", 2, "b");
 	public static void main(String[] args) {
 		einstienFloorProblem();	
 		isMultipleOfThreeAndFive_and_greaterThanTen();
 		calculateInterest();
 		fibonacciSeries();
 		classScopeTest();
+		fib(10);
+
+		ArbitraryCodes code = new ArbitraryCodes();
+		System.out.println(code.map);
 	}	
 
 	static void einstienFloorProblem() {
@@ -64,5 +70,18 @@ public final class ArbitraryCodes {
 			System.out.println(pi);
 		}
 
+	}
+
+	static void fib(int n) {
+		var a = 1;
+		var b = 1;
+		var c = 0;
+		for(var i=0; i<n>>>1; i++) {
+			System.out.printf("%d %d ", a, b);
+			c = a+b;
+			b = b+c;
+			a = c;
+		}
+		System.out.print("\n");
 	}
 }
