@@ -12,6 +12,9 @@ public final class ArbitraryCodes {
 		fibonacciSeries();
 		classScopeTest();
 		fib(10);
+		
+		System.out.println(isLeapYear(2000));
+		System.out.println(isLeapYear(2100));
 
 		ArbitraryCodes code = new ArbitraryCodes();
 		System.out.println(code.map);
@@ -83,5 +86,9 @@ public final class ArbitraryCodes {
 			a = c;
 		}
 		System.out.print("\n");
+	}
+
+	static boolean isLeapYear(int year) {
+		return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
 	}
 }
