@@ -18,6 +18,8 @@ public final class ArbitraryCodes {
 
 		ArbitraryCodes code = new ArbitraryCodes();
 		System.out.println(code.map);
+
+		printAllCharacters();
 	}	
 
 	static void einstienFloorProblem() {
@@ -90,5 +92,11 @@ public final class ArbitraryCodes {
 
 	static boolean isLeapYear(int year) {
 		return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
+	}
+
+	static void printAllCharacters() {
+		for(char c=0; c<=Character.MAX_VALUE; c++)
+			System.out.print(c);
+		System.out.print("\n");
 	}
 }
