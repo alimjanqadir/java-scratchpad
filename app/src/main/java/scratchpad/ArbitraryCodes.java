@@ -19,7 +19,10 @@ public final class ArbitraryCodes {
 		ArbitraryCodes code = new ArbitraryCodes();
 		System.out.println(code.map);
 
-		printAllCharacters();
+		//printAllCharacters();
+		
+		var maxDigit =	maxDigit(357012429);
+		System.out.println(maxDigit);
 	}	
 
 	static void einstienFloorProblem() {
@@ -98,5 +101,21 @@ public final class ArbitraryCodes {
 		for(char c=0; c<=Character.MAX_VALUE; c++)
 			System.out.print(c);
 		System.out.print("\n");
+	}
+
+	static int maxDigit(int n) {
+		var maxDigit = 0;
+		var currentDigit = 0;
+
+		while(n > 0) {
+			currentDigit = n % 10;
+
+			if(currentDigit > maxDigit) {
+				maxDigit = currentDigit;
+			}
+
+			n /= 10;
+		}
+		return maxDigit;
 	}
 }
