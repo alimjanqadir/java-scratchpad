@@ -23,6 +23,10 @@ public final class ArbitraryCodes {
 		
 		var maxDigit =	maxDigit(357012429);
 		System.out.println(maxDigit);
+
+		var computer = new Computer();
+		var  result = computer.calculate(10);
+		System.out.println(result);
 	}	
 
 	static void einstienFloorProblem() {
@@ -117,5 +121,20 @@ public final class ArbitraryCodes {
 			n /= 10;
 		}
 		return maxDigit;
+	}
+
+	private static final class Computer {
+		double calculate(int n) {
+			int x = 2, y = 1, t;
+			double sum = 0;
+
+			for(int i = 1; i<=n; i++) {
+				sum += x/y;
+				t = y;
+				y = x;
+				x = x + y;
+			}
+			return sum;
+		}
 	}
 }
