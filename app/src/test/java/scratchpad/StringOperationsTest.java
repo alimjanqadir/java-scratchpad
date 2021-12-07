@@ -19,5 +19,10 @@ public final class StringOperationsTest {
 		var result = testTarget.byteSize("abc");
 		assertEquals(result, 3);
 	}
-
+	
+	@Test
+	public void capitalize_input_all_lowercase() {
+		var input = "test";
+		var result = testTarget.capitalize(input, false);
+	}
 }
