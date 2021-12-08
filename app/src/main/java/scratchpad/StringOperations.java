@@ -1,7 +1,7 @@
 package scratchpad;
 
-import java.lang.*;
-import java.util.*;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public final class StringOperations {
 	public int byteSize(String input) {
@@ -14,5 +14,11 @@ public final class StringOperations {
 			 	? input.substring(1, input.length()).toLowerCase()
 				: input.substring(1, input.length())
 			);
+	}
+
+	public String capitalizeEveryWord(String input) {
+		return Pattern.compile("\\b(?=\\w)").splitAsStream(input)
+			.map(w->capitalize(w, false))
+			.collect(Collectors.joining());
 	}
 }

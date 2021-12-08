@@ -25,4 +25,11 @@ public final class StringOperationsTest {
 		var input = "test";
 		var result = testTarget.capitalize(input, false);
 	}
+
+	@Test
+	public void capitalizeEveryWord_input_all_lowercase() {
+		var input = "this is a test";
+		var result = testTarget.capitalizeEveryWord(input);
+		assertEquals(result, "This Is A Test");
+	}
 }
