@@ -45,6 +45,15 @@ public class MathOperations {
 	public boolean isPowerOfTwo(int value) {
 		return value > 0 && (value & (~value + 1)) == value;
 	}
+
+	public int log2(int n) {
+		var i = 0;
+		while(n > 0) {
+			n = n >> 1;
+			i += 1;
+		}
+		return i - 1;
+	}
 }
 
 

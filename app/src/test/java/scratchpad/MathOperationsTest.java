@@ -55,6 +55,12 @@ public class MathOperationsTest {
 		var result = mathOperations.isPowerOfTwo(16);
 		Assertions.assertEquals(true, result);
 	}
+
+	@Test
+	public void log2_with_input_8() {
+		var result = mathOperations.log2(8);
+		Assertions.assertEquals(3, result);
+	}
 }
 
 
