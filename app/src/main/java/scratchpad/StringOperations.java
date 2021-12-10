@@ -21,4 +21,8 @@ public final class StringOperations {
 			.map(w->capitalize(w, false))
 			.collect(Collectors.joining());
 	}
+
+	public int countVowels(String input) {
+		return input.replaceAll("[^aioueAIOUE]", "").length();
+	}
 }

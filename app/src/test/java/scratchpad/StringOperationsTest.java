@@ -32,4 +32,11 @@ public final class StringOperationsTest {
 		var result = testTarget.capitalizeEveryWord(input);
 		assertEquals(result, "This Is A Test");
 	}
+
+	@Test
+	public void countVowels() {
+		var input = "this is a test";
+		var result = testTarget.countVowels(input);
+		assertEquals(result, 4);
+	}
 }
