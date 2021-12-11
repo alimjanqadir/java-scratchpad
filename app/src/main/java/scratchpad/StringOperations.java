@@ -25,4 +25,8 @@ public final class StringOperations {
 	public int countVowels(String input) {
 		return input.replaceAll("[^aioueAIOUE]", "").length();
 	}
+
+	public String escapeRegExp(String input) {
+		return Pattern.quote(input);
+	}
 }
