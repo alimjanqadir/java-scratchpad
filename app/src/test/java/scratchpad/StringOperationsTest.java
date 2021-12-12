@@ -39,4 +39,11 @@ public final class StringOperationsTest {
 		var result = testTarget.countVowels(input);
 		assertEquals(result, 4);
 	}
+
+	@Test
+	public void fromCamelCase(){
+		var input = "camelCase";
+		var result = testTarget.fromCamelCase(input, "_");
+		assertEquals(result,"camel_case");
+	}
 }

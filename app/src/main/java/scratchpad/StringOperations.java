@@ -29,4 +29,10 @@ public final class StringOperations {
 	public String escapeRegExp(String input) {
 		return Pattern.quote(input);
 	}
+
+	public String fromCamelCase(String input, String separator) {
+		return input
+			.replaceAll("([a-z\\d])([A-Z])", "$1" + separator + "$2")
+			.toLowerCase();
+	}
 }
