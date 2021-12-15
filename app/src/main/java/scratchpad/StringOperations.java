@@ -35,4 +35,8 @@ public final class StringOperations {
 			.replaceAll("([a-z\\d])([A-Z])", "$1" + separator + "$2")
 			.toLowerCase();
 	}
+
+	public boolean isAbsoluteUrl(String url) {
+		return Pattern.compile("^[a-z][a-z0-9.+-]*:").matcher(url).find();
+	}
 }

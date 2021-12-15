@@ -46,4 +46,18 @@ public final class StringOperationsTest {
 		var result = testTarget.fromCamelCase(input, "_");
 		assertEquals(result,"camel_case");
 	}
+
+	@Test
+	public void isAbsoluteUrl_with_false_input_and_should_fail() {
+		var input = "../test";
+		var result = testTarget.isAbsoluteUrl(input);
+		assertEquals(result, false);
+	}
+	
+	@Test
+	public void isAbsoluteUrl_with_tur_input_and_should_success() {
+		var input = "https://example.com";
+		var result = testTarget.isAbsoluteUrl(input);
+		assertEquals(result, true);
+	}
 }
