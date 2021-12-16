@@ -2,6 +2,7 @@ package scratchpad;
 
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.Objects;
 
 public final class StringOperations {
 	public int byteSize(String input) {
@@ -38,5 +39,9 @@ public final class StringOperations {
 
 	public boolean isAbsoluteUrl(String url) {
 		return Pattern.compile("^[a-z][a-z0-9.+-]*:").matcher(url).find();
+	}
+
+	public boolean isLowerCase(String input) {
+		return Objects.equals(input, input.toLowerCase());
 	}
 }

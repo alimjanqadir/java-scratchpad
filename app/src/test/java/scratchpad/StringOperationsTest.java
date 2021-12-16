@@ -60,4 +60,18 @@ public final class StringOperationsTest {
 		var result = testTarget.isAbsoluteUrl(input);
 		assertEquals(result, true);
 	}
+
+	@Test
+	public void isLowerCase_should_success() {
+		var input = "test";
+		var result = testTarget.isLowerCase(input);
+		assertEquals(result, true);
+	}
+
+	@Test
+	public void isLowerCase_should_fail() {
+		var input = "Test";
+		var result = testTarget.isLowerCase(input);
+		assertEquals(result, false);
+	}
 }
