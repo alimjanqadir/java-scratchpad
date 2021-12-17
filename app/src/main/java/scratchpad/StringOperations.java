@@ -44,4 +44,10 @@ public final class StringOperations {
 	public boolean isLowerCase(String input) {
 		return Objects.equals(input, input.toLowerCase());
 	}
+
+	public boolean isPalindrome(String input) {
+		var processed = input.toLowerCase().replaceAll("[\\W_]", "");
+		var reversed = new StringBuilder(processed).reverse().toString();
+		return reversed.equals(processed);
+	}
 }

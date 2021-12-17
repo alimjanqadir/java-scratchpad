@@ -74,4 +74,18 @@ public final class StringOperationsTest {
 		var result = testTarget.isLowerCase(input);
 		assertEquals(result, false);
 	}
+
+	@Test
+	public void isPalinedrome_should_suceess() {
+		var input = "tenet";
+		var result = testTarget.isPalindrome(input);
+		assertEquals(result, true);
+	}
+	
+	@Test
+	public void isPalinedrome_should_fail() {
+		var input = "test";
+		var result = testTarget.isPalindrome(input);
+		assertEquals(result, false);
+	}
 }
