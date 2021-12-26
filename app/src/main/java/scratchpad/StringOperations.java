@@ -2,6 +2,7 @@ package scratchpad;
 
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.Objects;
 
 public final class StringOperations {
@@ -49,5 +50,10 @@ public final class StringOperations {
 		var processed = input.toLowerCase().replaceAll("[\\W_]", "");
 		var reversed = new StringBuilder(processed).reverse().toString();
 		return reversed.equals(processed);
+	}
+
+	public boolean isNumeric(String input) {
+		return IntStream.range(0, input.length())
+			.allMatch(i-> Character.isDigit(input.charAt(i)));
 	}
 }
