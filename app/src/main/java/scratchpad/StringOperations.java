@@ -56,4 +56,8 @@ public final class StringOperations {
 		return IntStream.range(0, input.length())
 			.allMatch(i-> Character.isDigit(input.charAt(i)));
 	}
+
+	public String reveseString(String input) {
+		return new StringBuilder(input).reverse().toString();
+	}
 }
