@@ -60,4 +60,8 @@ public final class StringOperations {
 	public String reveseString(String input) {
 		return new StringBuilder(input).reverse().toString();
 	}
+
+	public String[] splitLines(String input) {
+		return input.split("\\r?\\n");
+	}
 }
