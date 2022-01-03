@@ -3,6 +3,7 @@ package scratchpad;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.Arrays;
 import java.util.Objects;
 
 public final class StringOperations {
@@ -63,5 +64,9 @@ public final class StringOperations {
 
 	public String[] splitLines(String input) {
 		return input.split("\\r?\\n");
+	}
+
+	public String sortCharactersInString(String input) {
+		return Arrays.stream(input.split("")).sorted().collect(Collectors.joining());
 	}
 }
