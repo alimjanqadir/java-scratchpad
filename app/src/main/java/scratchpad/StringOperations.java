@@ -69,4 +69,8 @@ public final class StringOperations {
 	public String sortCharactersInString(String input) {
 		return Arrays.stream(input.split("")).sorted().collect(Collectors.joining());
 	}
+
+	public int[] convertStringToInts(String input) {
+		return Arrays.stream(input.split("")).mapToInt(Integer::parseInt).toArray();
+	}
 }
