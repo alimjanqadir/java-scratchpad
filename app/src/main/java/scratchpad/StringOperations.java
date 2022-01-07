@@ -80,4 +80,10 @@ public final class StringOperations {
 			input;
 	
 	}
+
+	public String[] words(String input) {
+		return Arrays.stream(input.split("[^a-zA-z]+"))
+			.filter(s->!s.isEmpty())
+			.toArray(String[]::new);
+	}
 }
