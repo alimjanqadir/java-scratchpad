@@ -3,6 +3,8 @@ package scratchpad;
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Files;
 import java.io.IOException;
 
 public final class InputOutputOperations {
@@ -15,6 +17,10 @@ public final class InputOutputOperations {
 			os.write(buffer, 0, length);
 		}
 		return os.toString(StandardCharsets.UTF_8.name());
+	}
+
+	public String readFileToString(Path path) throws IOException{
+		return new String(Files.readAllBytes(path));	
 	}
 
 }
