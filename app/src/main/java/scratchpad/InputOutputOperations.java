@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Files;
+import java.nio.file.FileSystems;
 import java.io.IOException;
 
 public final class InputOutputOperations {
@@ -23,4 +24,8 @@ public final class InputOutputOperations {
 		return new String(Files.readAllBytes(path));	
 	}
 
+	public String getCurrentWorkingDirectory() {
+		return FileSystems.getDefault().getPath("").toAbsolutePath().toString(); 
+	}
 }
+
