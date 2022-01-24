@@ -2,6 +2,7 @@ package scratchpad;
 
 import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Files;
@@ -27,5 +28,14 @@ public final class InputOutputOperations {
 	public String getCurrentWorkingDirectory() {
 		return FileSystems.getDefault().getPath("").toAbsolutePath().toString(); 
 	}
+	
+	public String tmpdirPath() {
+		String tmpdir = System.getProperty("java.io.tmpdir");
+		if(!tmpdir.endsWith(File.separator))
+			tmpdir += File.separator;
+			
+		return tmpdir;
+	}
 }
+
 
