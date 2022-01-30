@@ -21,9 +21,14 @@ public final class ReflectionPractice {
 
 	}
 
+	public static boolean isInnerClass(Class<?> cls) {
+		return cls != null && cls.getEnclosingClass() != null;
+	}
+
 	public static void main(String[] args) {
 		ReflectionPractice.getAllInterfaces(FileInputStream.class)
 			.stream()
 			.forEach(System.out::println);
 	}
+
 }
