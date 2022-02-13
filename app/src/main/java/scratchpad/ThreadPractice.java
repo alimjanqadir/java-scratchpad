@@ -4,8 +4,6 @@ import java.util.stream.IntStream;
 
 public final class ThreadPractice {
 	public static void main(String[] args) {
-		var practiceOne = new PracticeOne();
-		practiceOne.run();
 	}	
 }
 
@@ -36,3 +34,4 @@ final class PracticeOne implements Runnable{
 		});
 	}
 } 
+
