@@ -1,0 +1,131 @@
+Classfile /Users/alimjan/Developer/scratchpad/app/src/main/java/scratchpad/EnumType.class
+  Last modified Feb 16, 2022; size 965 bytes
+  SHA-256 checksum d647de092cd0599c44626fc0097ecc69e00dc011e8c62ddd76d38fa5df9a92f3
+  Compiled from "EnumType.java"
+public final class com.example.test.EnumType extends java.lang.Enum<com.example.test.EnumType>
+  minor version: 0
+  major version: 61
+  flags: (0x4031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER, ACC_ENUM
+  this_class: #1                          // com/example/test/EnumType
+  super_class: #23                        // java/lang/Enum
+  interfaces: 0, fields: 4, methods: 5, attributes: 2
+Constant pool:
+   #1 = Class              #2             // com/example/test/EnumType
+   #2 = Utf8               com/example/test/EnumType
+   #3 = Fieldref           #1.#4          // com/example/test/EnumType.A:Lcom/example/test/EnumType;
+   #4 = NameAndType        #5:#6          // A:Lcom/example/test/EnumType;
+   #5 = Utf8               A
+   #6 = Utf8               Lcom/example/test/EnumType;
+   #7 = Fieldref           #1.#8          // com/example/test/EnumType.B:Lcom/example/test/EnumType;
+   #8 = NameAndType        #9:#6          // B:Lcom/example/test/EnumType;
+   #9 = Utf8               B
+  #10 = Fieldref           #1.#11         // com/example/test/EnumType.C:Lcom/example/test/EnumType;
+  #11 = NameAndType        #12:#6         // C:Lcom/example/test/EnumType;
+  #12 = Utf8               C
+  #13 = Fieldref           #1.#14         // com/example/test/EnumType.$VALUES:[Lcom/example/test/EnumType;
+  #14 = NameAndType        #15:#16        // $VALUES:[Lcom/example/test/EnumType;
+  #15 = Utf8               $VALUES
+  #16 = Utf8               [Lcom/example/test/EnumType;
+  #17 = Methodref          #18.#19        // "[Lcom/example/test/EnumType;".clone:()Ljava/lang/Object;
+  #18 = Class              #16            // "[Lcom/example/test/EnumType;"
+  #19 = NameAndType        #20:#21        // clone:()Ljava/lang/Object;
+  #20 = Utf8               clone
+  #21 = Utf8               ()Ljava/lang/Object;
+  #22 = Methodref          #23.#24        // java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+  #23 = Class              #25            // java/lang/Enum
+  #24 = NameAndType        #26:#27        // valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+  #25 = Utf8               java/lang/Enum
+  #26 = Utf8               valueOf
+  #27 = Utf8               (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+  #28 = Methodref          #23.#29        // java/lang/Enum."<init>":(Ljava/lang/String;I)V
+  #29 = NameAndType        #30:#31        // "<init>":(Ljava/lang/String;I)V
+  #30 = Utf8               <init>
+  #31 = Utf8               (Ljava/lang/String;I)V
+  #32 = String             #5             // A
+  #33 = Methodref          #1.#29         // com/example/test/EnumType."<init>":(Ljava/lang/String;I)V
+  #34 = String             #9             // B
+  #35 = String             #12            // C
+  #36 = Methodref          #1.#37         // com/example/test/EnumType.$values:()[Lcom/example/test/EnumType;
+  #37 = NameAndType        #38:#39        // $values:()[Lcom/example/test/EnumType;
+  #38 = Utf8               $values
+  #39 = Utf8               ()[Lcom/example/test/EnumType;
+  #40 = Utf8               values
+  #41 = Utf8               Code
+  #42 = Utf8               LineNumberTable
+  #43 = Utf8               (Ljava/lang/String;)Lcom/example/test/EnumType;
+  #44 = Utf8               Signature
+  #45 = Utf8               ()V
+  #46 = Utf8               <clinit>
+  #47 = Utf8               Ljava/lang/Enum<Lcom/example/test/EnumType;>;
+  #48 = Utf8               SourceFile
+  #49 = Utf8               EnumType.java
+{
+  public static final com.example.test.EnumType A;
+    descriptor: Lcom/example/test/EnumType;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final com.example.test.EnumType B;
+    descriptor: Lcom/example/test/EnumType;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final com.example.test.EnumType C;
+    descriptor: Lcom/example/test/EnumType;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static com.example.test.EnumType[] values();
+    descriptor: ()[Lcom/example/test/EnumType;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: getstatic     #13                 // Field $VALUES:[Lcom/example/test/EnumType;
+         3: invokevirtual #17                 // Method "[Lcom/example/test/EnumType;".clone:()Ljava/lang/Object;
+         6: checkcast     #18                 // class "[Lcom/example/test/EnumType;"
+         9: areturn
+      LineNumberTable:
+        line 2: 0
+
+  public static com.example.test.EnumType valueOf(java.lang.String);
+    descriptor: (Ljava/lang/String;)Lcom/example/test/EnumType;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: ldc           #1                  // class com/example/test/EnumType
+         2: aload_0
+         3: invokestatic  #22                 // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+         6: checkcast     #1                  // class com/example/test/EnumType
+         9: areturn
+      LineNumberTable:
+        line 2: 0
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=4, locals=0, args_size=0
+         0: new           #1                  // class com/example/test/EnumType
+         3: dup
+         4: ldc           #32                 // String A
+         6: iconst_0
+         7: invokespecial #33                 // Method "<init>":(Ljava/lang/String;I)V
+        10: putstatic     #3                  // Field A:Lcom/example/test/EnumType;
+        13: new           #1                  // class com/example/test/EnumType
+        16: dup
+        17: ldc           #34                 // String B
+        19: iconst_1
+        20: invokespecial #33                 // Method "<init>":(Ljava/lang/String;I)V
+        23: putstatic     #7                  // Field B:Lcom/example/test/EnumType;
+        26: new           #1                  // class com/example/test/EnumType
+        29: dup
+        30: ldc           #35                 // String C
+        32: iconst_2
+        33: invokespecial #33                 // Method "<init>":(Ljava/lang/String;I)V
+        36: putstatic     #10                 // Field C:Lcom/example/test/EnumType;
+        39: invokestatic  #36                 // Method $values:()[Lcom/example/test/EnumType;
+        42: putstatic     #13                 // Field $VALUES:[Lcom/example/test/EnumType;
+        45: return
+      LineNumberTable:
+        line 3: 0
+        line 2: 39
+}
+Signature: #47                          // Ljava/lang/Enum<Lcom/example/test/EnumType;>;
+SourceFile: "EnumType.java"
