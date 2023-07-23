@@ -1,4 +1,4 @@
-package scrachpad;
+package scratchpad;
 
 import java.io.File;
 import java.io.FileInputStream;

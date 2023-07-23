@@ -1,3 +1,5 @@
+package scratchpad;
+
 import java.util.Random;
 
 public final class ForInFloat {

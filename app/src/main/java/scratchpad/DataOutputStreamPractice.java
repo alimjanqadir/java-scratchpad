@@ -1,8 +1,8 @@
 package scratchpad;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 
 public final class DataOutputStreamPractice {

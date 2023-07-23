@@ -1,2 +1,4 @@
-package scratchpad;public class GenericsWithArrayTest {
+package scratchpad;
+
+public class GenericsWithArrayTest {
 }

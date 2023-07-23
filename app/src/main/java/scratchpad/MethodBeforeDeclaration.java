@@ -1,3 +1,5 @@
+package scratchpad;
+
 public class MethodBeforeDeclaration {
 	static void test() {
 		System.out.println("test");

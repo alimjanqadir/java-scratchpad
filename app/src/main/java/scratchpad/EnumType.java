@@ -1,4 +1,4 @@
-package com.example.test;
+package scratchpad;
 public enum EnumType {
 	A, B, C
 }

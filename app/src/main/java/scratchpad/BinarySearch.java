@@ -1,3 +1,5 @@
+package scratchpad;
+
 public final class BinarySearch {
 	 public static int binarySearch(int[] array, int lowerBound, int upperBound, int target) {
 		// Termination condition

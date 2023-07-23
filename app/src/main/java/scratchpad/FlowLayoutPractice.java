@@ -1,9 +1,7 @@
 package scratchpad;
 
-import java.awt.FlowLayout;
-import java.awt.Container;
-import javax.swing.JFrame;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
 
 public final class FlowLayoutPractice {
 	public static void main(String[] args) {

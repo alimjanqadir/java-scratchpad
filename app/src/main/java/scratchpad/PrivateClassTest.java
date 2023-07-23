@@ -1,3 +1,5 @@
+package scratchpad;
+
 public class PrivateClassTest {
 	public static void main(String[] args) {
 		var a = new A();

@@ -1,8 +1,10 @@
-import java.util.stream.Stream;
-import java.util.stream.Collectors;
+package scratchpad;
+
+import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.List;
-import java.io.FileInputStream;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public final class ReflectionPractice {
 	public static List<Class<?>> getAllInterfaces(Class<?> cls) {

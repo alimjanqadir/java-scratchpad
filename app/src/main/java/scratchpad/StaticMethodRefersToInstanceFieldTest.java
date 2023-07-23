@@ -1,3 +1,5 @@
+package scratchpad;
+
 public final class StaticMethodRefersToInstanceFieldTest {
 	int[] array = new int[]{3, 1, 4, 15};
 

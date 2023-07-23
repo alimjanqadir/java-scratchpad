@@ -1,3 +1,5 @@
+package scratchpad;
+
 public class StaticInitialization {
 	class InnerClassA {
 		InnerClassA() {

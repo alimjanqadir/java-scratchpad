@@ -1,10 +1,10 @@
 package scratchpad;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.Arrays;
-import java.util.Objects;
 
 public final class StringOperations {
 	public int byteSize(String input) {

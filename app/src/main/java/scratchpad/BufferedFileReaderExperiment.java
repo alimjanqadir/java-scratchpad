@@ -1,7 +1,9 @@
 package scratchpad;
 
-import java.io.*;
-import java.util.stream.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.stream.Collectors;
 
 public final class BufferedFileReaderExperiment {
 	public static String read(String fileName) {
