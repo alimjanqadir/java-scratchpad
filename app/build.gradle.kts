@@ -32,9 +32,12 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.0-jre")
 
+//    implementation("org.jetbrains.kotlin:kotlin-script-runtime:1.6.0")
+
     // openjdk java object layout library
     implementation("org.openjdk.jol:jol-core:0.10")
     implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("script-runtime"))
 }
 
 application {
