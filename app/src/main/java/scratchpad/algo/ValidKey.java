@@ -144,7 +144,7 @@ public class ValidKey {
 //                }
 //            }).map(String::trim).mapToInt(Integer::parseInt).toArray();
             Instant start = Instant.now();
-            int[] result = Result.getValidKeyCount2(new int[]{10000000});
+            int[] result = Result.getValidKeyCount3(new int[]{Integer.MAX_VALUE / 2});
             Instant end = Instant.now();
             System.out.printf("Elapsed Time: %d%n", Duration.between(start, end).toMillis());
 
